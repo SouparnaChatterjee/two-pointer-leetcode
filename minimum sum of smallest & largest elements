@@ -1,0 +1,20 @@
+#include<bits/stdc++.h>
+
+class Solution {
+public:
+    double minimumAverage(vector<int>& nums) {
+        int n=nums.size();
+        sort(nums.begin(),nums.end());
+       int start=0;
+       int end=n-1; 
+       double sum=INT_MAX;
+       while(start<end)
+       {
+        double k=(nums[start]+nums[end])/(2*1.0);
+        sum=min(sum,k);
+        start++;
+        end--;
+       }
+       return sum;
+    }
+};
